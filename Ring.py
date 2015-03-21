@@ -6,10 +6,10 @@ class Ring( Topo ):
 	def __init__( self ):
 		"Create custom topo."
 		#initialize
-		Topo.__init__( self )
+        Topo.__init__( self )
 
 		#add
-		HA1 = self.addHost( 'HA1' )
+        HA1 = self.addHost( 'HA1' )
         HA2 = self.addHost( 'HA2' )
         HB1 = self.addHost( 'HB1' )
         HB2 = self.addHost( 'HB2' )
@@ -35,7 +35,7 @@ class Ring( Topo ):
         SwitchH = self.addSwitch( 'SH' )
 
 		#links
-		self.addLink( SA, SB )
+        self.addLink( SA, SB )
         self.addLink( SB, SC )
         self.addLink( SC, SD )
         self.addLink( SD, SE )
