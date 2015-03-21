@@ -2,8 +2,8 @@ from mininet.topo import Topo
 
 class Ring( Topo ):
 	"Ring topology example."
-
-	def __init__( self ):
+    
+    def __init__( self ):
 		"Create custom topo."
 		#initialize
         Topo.__init__( self )
