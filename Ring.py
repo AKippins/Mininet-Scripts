@@ -1,14 +1,14 @@
 from mininet.topo import Topo
 
 class Ring( Topo ):
-	"Ring topology example."
+    "Ring topology example."
     
     def __init__( self ):
-		"Create custom topo."
-		#initialize
+	"Create custom topo."
+	#initialize
         Topo.__init__( self )
 
-		#add
+	#add
         HA1 = self.addHost( 'HA1' )
         HA2 = self.addHost( 'HA2' )
         HB1 = self.addHost( 'HB1' )
@@ -25,38 +25,38 @@ class Ring( Topo ):
         HG2 = self.addHost( 'HG2' )
         HH1 = self.addHost( 'HH1' )
         HH2 = self.addHost( 'HH2' )
-        SwitchA = self.addSwitch( 'SA' )
-        SwitchB = self.addSwitch( 'SB' )
-        SwitchC = self.addSwitch( 'SC' )
-        SwitchD = self.addSwitch( 'SD' )
-        SwitchE = self.addSwitch( 'SE' )
-        SwitchF = self.addSwitch( 'SF' )
-        SwitchG = self.addSwitch( 'SG' )
-        SwitchH = self.addSwitch( 'SH' )
+        S1 = self.addSwitch( 'S1' )
+        S2 = self.addSwitch( 'S2' )
+        S3 = self.addSwitch( 'S3' )
+        S4 = self.addSwitch( 'S4' )
+        S5 = self.addSwitch( 'S5' )
+        S6 = self.addSwitch( 'S6' )
+        S7 = self.addSwitch( 'S7' )
+        S8 = self.addSwitch( 'S8' )
 
-		#links
-        self.addLink( SA, SB )
-        self.addLink( SB, SC )
-        self.addLink( SC, SD )
-        self.addLink( SD, SE )
-        self.addLink( SE, SF )
-        self.addLink( SF, SG )
-        self.addLink( SG, SH )
-        self.addLink( SH, SA )
-        self.addLink( SA, HA1 )
-        self.addLink( SA, HA2 )
-        self.addLink( SB, HB1 )
-        self.addLink( SB, HB2 )
-        self.addLink( SC, HC1 )
-        self.addLink( SC, HC2 )
-        self.addLink( SD, HD1 )
-        self.addLink( SD, HD2 )
-        self.addLink( SE, HE1 )
-        self.addLink( SE, HE2 )
-        self.addLink( SF, HF1 )
-        self.addLink( SF, HF2 )
-        self.addLink( SG, HG1 )
-        self.addLink( SG, HG2 )
-        self.addLink( SH, HH1 )
-        self.addLink( SH, HH2 )
+	#links
+        self.addLink( S1, S2 )
+        self.addLink( S2, S3 )
+        self.addLink( S3, S4 )
+        self.addLink( S4, S5 )
+        self.addLink( S5, S6 )
+        self.addLink( S6, S7 )
+        self.addLink( S7, S8 )
+        self.addLink( S8, S1 )
+        self.addLink( S1, HA1 )
+        self.addLink( S1, HA2 )
+        self.addLink( S2, HB1 )
+        self.addLink( S2, HB2 )
+        self.addLink( S3, HC1 )
+        self.addLink( S3, HC2 )
+        self.addLink( S4, HD1 )
+        self.addLink( S4, HD2 )
+        self.addLink( S5, HE1 )
+        self.addLink( S5, HE2 )
+        self.addLink( S6, HF1 )
+        self.addLink( S6, HF2 )
+        self.addLink( S7, HG1 )
+        self.addLink( S7, HG2 )
+        self.addLink( S8, HH1 )
+        self.addLink( S8, HH2 )
 topos = { 'Ring': ( lambda: Ring() ) }
